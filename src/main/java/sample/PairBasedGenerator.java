@@ -27,9 +27,10 @@ public class PairBasedGenerator {
           for(se.metricspace.lotto.Row row:rows) {
             printStream.println(row);
           }
-          se.metricspace.lotto.Statistics.showStatistics(rows, printStream);
-          se.metricspace.lotto.Statistics.showSimilarity(rows, printStream);
-          se.metricspace.lotto.Statistics.showPairStats(rows, printStream);
+          se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.Statistics.analyseRows(rows);
+          statistics.showStatistics(printStream);
+          statistics.showSimilarity(printStream);
+          statistics.showPairStats(printStream);
         } catch (java.io.IOException exception) {
           System.out.println("IOException writing stats: "+exception.getMessage());
           exception.printStackTrace(System.out);
