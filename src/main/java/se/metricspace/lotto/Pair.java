@@ -52,6 +52,16 @@ public class Pair implements Comparable<Pair> {
     return its1st + its2nd * 35; 
   }
 
+  public static java.util.List<se.metricspace.lotto.Pair> initializePairs() {
+    java.util.List<se.metricspace.lotto.Pair> pairs = new java.util.ArrayList<>();
+    for(int outerLoop = 0; outerLoop < 34; outerLoop++) {
+      for(int innerLoop = 1+outerLoop; innerLoop < 35; innerLoop++) {
+        pairs.add(new se.metricspace.lotto.Pair(outerLoop, innerLoop));
+      }
+    }
+    return pairs;
+  }
+
   @Override
   public String toString() {
     return "[ Pair: ("+its1st+","+its2nd+") ]";

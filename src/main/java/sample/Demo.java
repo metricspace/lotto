@@ -15,10 +15,10 @@ public class Demo {
       System.out.println(row);
     });
     System.out.println();
-    se.metricspace.lotto.Statistics.showStatistics(rows);
+    se.metricspace.lotto.Statistics.showStatistics(rows, System.out);
     System.out.println();
-    se.metricspace.lotto.Statistics.showSimilarity(rows);
+    se.metricspace.lotto.Statistics.showSimilarity(rows, System.out);
     System.out.println();
-    se.metricspace.lotto.Statistics.showPairStats(rows);
+    se.metricspace.lotto.Statistics.showPairStats(rows, System.out);
   }
 }
