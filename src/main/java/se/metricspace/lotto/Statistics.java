@@ -12,6 +12,7 @@ public class Statistics {
   private int itsPairMax = 0;
   private int itsPairMin = 0;
   private int itsPairUniqueCount = 0;
+  private java.util.List<Row> itsRows = null;
   private int[] itsSimilarity = null;
   private double itsSimilarityAverage = 0.0;
   private int itsSimilarityMax = 0;
@@ -37,6 +38,7 @@ public class Statistics {
     Statistics statistics = new Statistics();
     
     if(null!=rows && rows.size()>0) {
+      statistics.itsRows = rows;
       statistics.itsNumberOfRows = rows.size();
 
       // Some basics
@@ -166,6 +168,10 @@ public class Statistics {
 
   public int getPairUniqueCount() {
     return itsPairUniqueCount;
+  }
+
+  public java.util.List<se.metricspace.lotto.Row> getRows() {
+    return itsRows;
   }
 
   public int[] getSimilarity() {
