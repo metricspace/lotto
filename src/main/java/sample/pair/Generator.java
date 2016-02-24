@@ -14,6 +14,7 @@ public class Generator implements se.metricspace.lotto.CollectionGenerator {
    itsRandom = (null!=theRandom) ? theRandom: new java.util.Random(System.currentTimeMillis());
   }
 
+  @Override
   public java.util.List<se.metricspace.lotto.Row> generateRows() {
     return Generator.generateRows(itsRandom);
   }

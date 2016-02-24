@@ -6,6 +6,7 @@ import se.metricspace.lotto.Statistics;
 // och därmed är de 6724520 olika raderna lika sannolika. 
 // Spela inte för mer än du har råd att förlora!
 public class Competition implements se.metricspace.lotto.Competition {
+  @Override
   public Statistics getWinner(Statistics the1stStatistics, Statistics the2ndStatistics) {
     return the1stStatistics.getNumberOfRows()>the2ndStatistics.getNumberOfRows() ? the1stStatistics : the2ndStatistics;
   }

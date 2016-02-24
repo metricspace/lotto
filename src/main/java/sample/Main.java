@@ -1,11 +1,11 @@
-package sample.pair;
+package sample;
 
 // Lotto är ett slumpspel och alla siffror är lika sannolika by design
 // och därmed är de 6724520 olika raderna lika sannolika. 
 // Spela inte för mer än du har råd att förlora!
 public class Main {
   public static void main(String[] args) {
-    se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.ForkJoined.execute(32, new Competition(), new Generator());
+    se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.ForkJoined.execute(256, new Competition(), new Generator(24));
     java.util.List<se.metricspace.lotto.Row> rows = statistics.getRows();
     if(null!=rows && rows.size()>0) {
       java.util.Collections.sort(rows);
