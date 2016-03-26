@@ -5,7 +5,7 @@ package sample.fivers;
 // Spela inte för mer än du har råd att förlora!
 public class Main {
   public static void main(String[] args) {
-    se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.ForkJoined.execute(32, new Competition(), new Generator(4,new java.util.Random(System.currentTimeMillis())));
+    se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.ForkJoined.execute(2, new Competition(), new Generator(6,new java.util.Random(System.currentTimeMillis())));
     java.util.List<se.metricspace.lotto.Row> rows = statistics.getRows();
     if(null!=rows && rows.size()>0) {
       java.util.Collections.sort(rows);

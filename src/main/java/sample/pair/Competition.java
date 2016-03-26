@@ -8,6 +8,20 @@ import se.metricspace.lotto.Statistics;
 public class Competition implements se.metricspace.lotto.Competition {
   @Override
   public Statistics getWinner(Statistics the1stStatistics, Statistics the2ndStatistics) {
-    return the1stStatistics.getNumberOfRows()>the2ndStatistics.getNumberOfRows() ? the1stStatistics : the2ndStatistics;
+    if(null==the1stStatistics) return the2ndStatistics;
+    
+    Statistics winner = the1stStatistics;
+    if(the1stStatistics.getPairUniqueCount()>the2ndStatistics.getPairUniqueCount()) {
+      winner = the1stStatistics;
+    } else if (the1stStatistics.getPairUniqueCount()<the2ndStatistics.getPairUniqueCount()) {
+      winner = the2ndStatistics;
+    } else {
+      if(the1stStatistics.getSimilarity()[2]<the2ndStatistics.getSimilarity()[2]) {
+        winner = the1stStatistics;
+      } else {
+        winner = the2ndStatistics;
+      }
+    }
+    return winner;
   }
 }
