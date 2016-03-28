@@ -5,7 +5,7 @@ package sample.pair;
 // Spela inte för mer än du har råd att förlora!
 public class Main {
   public static void main(String[] args) {
-    se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.ForkJoined.execute(256, new Competition(), new Generator(20));
+    se.metricspace.lotto.Statistics statistics = se.metricspace.lotto.ForkJoined.execute(16, new Competition(), new Generator(30));
     java.util.List<se.metricspace.lotto.Row> rows = statistics.getRows();
     if(null!=rows && rows.size()>0) {
       java.util.Collections.sort(rows);

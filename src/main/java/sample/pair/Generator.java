@@ -4,7 +4,7 @@ package sample.pair;
 // och därmed är de 6724520 olika raderna lika sannolika. 
 // Spela inte för mer än du har råd att förlora!
 public class Generator implements se.metricspace.lotto.CollectionGenerator {
-  private static final long TIMEOUT = 1000000L; // 1000 sek, 16 m 40s
+  private static final long TIMEOUT = 2500000L; // 1000 sek, 16 m 40s
   private java.util.Random itsRandom = null;
   private int itsSize = 0;
 
@@ -66,7 +66,7 @@ public class Generator implements se.metricspace.lotto.CollectionGenerator {
             }
           }
         }
-      } while ((maxSim>2 || uniquePairs<18) && (System.currentTimeMillis()-start<TIMEOUT));
+      } while ((maxSim>2 || uniquePairs<14) && (System.currentTimeMillis()-start<TIMEOUT));
       if(System.currentTimeMillis()-start<TIMEOUT)  {
         rows.add(row);
         int [] someInts = row.getItems();
